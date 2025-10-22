@@ -16,7 +16,6 @@ export default function Page() {
       <div className=" max-w-sm w-full mx-auto">
         {JSON.stringify(user, null, 2)}
       </div>
-      
     </div>
   )
 }
