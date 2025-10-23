@@ -6,7 +6,7 @@ import { Button } from "@workspace/ui/components/button";
 
 export default function Page() {
 
-  const user = useQuery(api.users.getMany);
+  // const user = useQuery(api.users.getMany);
   const addUser = useMutation(api.users.add)
   return (
     <>
@@ -15,9 +15,9 @@ export default function Page() {
       <UserButton />
       <OrganizationSwitcher hidePersonal/>
       <Button onClick={() => addUser()}>Add</Button>
-      <div className=" max-w-sm w-full mx-auto">
+      {/* <div className=" max-w-sm w-full mx-auto">
         {JSON.stringify(user, null, 2)}
-      </div>
+      </div> */}
     </div>
     </>
   )
