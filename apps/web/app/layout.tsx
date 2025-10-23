@@ -1,13 +1,13 @@
-import { Geist, Geist_Mono } from "next/font/google"
-import { ClerkProvider } from '@clerk/nextjs'
-
+import { Inter, Geist_Mono } from "next/font/google"
+import { ClerkProvider } from "@clerk/nextjs"
 
 import "@workspace/ui/globals.css"
 import { Providers } from "@/components/providers"
 
-const fontSans = Geist({
+const fontSans = Inter({
   subsets: ["latin"],
   variable: "--font-sans",
+  display: "swap", // improves font loading performance
 })
 
 const fontMono = Geist_Mono({
@@ -23,12 +23,10 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${fontSans.variable} ${fontMono.variable} font-sans antialiased `}
+        className={`${fontSans.variable} ${fontMono.variable} font-sans antialiased`}
       >
         <ClerkProvider>
-        <Providers>
-          {children}
-          </Providers>
+          <Providers>{children}</Providers>
         </ClerkProvider>
       </body>
     </html>
