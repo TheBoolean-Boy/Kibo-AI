@@ -1,4 +1,4 @@
-import { SignIn } from "@clerk/nextjs"
+import { AuthLayout } from "@/modules/auth/ui/layouts/auth-layout"
 import React from "react"
 
 
@@ -6,11 +6,11 @@ type Props = {
   children: React.ReactNode
 }
 
-const Layout = ({children}: Props) => {
-  return(
-    <div className=" h-screen flex items-center justify-center">
+const Layout = ({ children }: Props) => {
+  return (
+    <AuthLayout>
       {children}
-    </div>
+    </AuthLayout>
   )
 }
 
